@@ -1,14 +1,14 @@
 {
-  "name": "PROJECT15_6",
+  "name": "PROJECT15_9",
   "version": "1.0.0",
-  "description": "timer",
-  "main": "index.js",
+  "description": "GITHUB users finder",
+  "main": "script.js",
   "scripts": {
     "test": "npm-run-all test:*",
     "test:html": "nu-html-checker *.html",
     "init-project": "npm install && npm-run-all init:*",
     "init:dirs": "mkdir -p sass css vendor images js",
-    "init:files": "touch README.md index.html sass/style.scss js/script.js",
+    "init:files": "touch README.md index.html sass/style.scss script.js",
     "init:gitignore": "curl https://raw.githubusercontent.com/github/gitignore/master/Node.gitignore -o .gitignore",
     "build": "npm-run-all build:* test",
     "build:clean": "rimraf css",
@@ -18,7 +18,7 @@
     "watch": "npm-run-all build -p watch:*",
     "watch:sassprefixer": "onchange sass -- node-sass --output-style expanded --source-map true -o css sass -- autoprefixer-cli -o css/style.css",
     "watch:browser-sync": "browser-sync start --server --files css/*.css *.html",
-    "start": "babel script.js --watch --out-file script-compiled.js"
+    "build": "babel script.js --watch --out-file build.js"
   },
   "keywords": [],
   "author": "",
@@ -35,5 +35,8 @@
     "onchange": "^3.3.0",
     "rimraf": "^2.6.2"
   },
-  "dependencies": {}
+  "dependencies": {
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1"
+  }
 }
